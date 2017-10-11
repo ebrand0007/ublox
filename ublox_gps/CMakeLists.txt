@@ -14,7 +14,7 @@ catkin_package(
     CATKIN_DEPENDS roscpp ublox_msgs ublox_serialization)
 
 # include boost
-find_package(Boost REQUIRED COMPONENTS system regex thread)
+find_package(Boost REQUIRED COMPONENTS system regex thread atomic)
 link_directories(${Boost_LIBRARY_DIR})
 include_directories(${Boost_INCLUDE_DIR})
 
@@ -35,6 +35,7 @@ target_link_libraries(ublox_gps
   boost_system
   boost_regex
   boost_thread
+  boost_atomic
 )
 
 target_link_libraries(ublox_gps
